@@ -50,18 +50,18 @@ content-type: application/json
 // PRODUCTION Deploy ###
 
 ###
-GET https://cse341-lesson3.onrender.com/professional
+GET https://cse341-contactsapi-swagger.onrender.com/professional
 
 ###
-GET https://cse341-lesson3.onrender.com/contacts
+GET https://cse341-contactsapi-swagger.onrender.com/contacts
 
 ###
-GET https://cse341-lesson3.onrender.com/contacts/6325d9779a0a46103327dae1
+GET https://cse341-contactsapi-swagger.onrender.com/contacts/6325d9779a0a46103327dae1
 
 
 # Add new Contact information
 ### 
-POST https://cse341-lesson3.onrender.com/contacts  HTTP/1.1
+POST https://cse341-contactsapi-swagger.onrender.com/contacts  HTTP/1.1
 content-type: application/json
 
 {
@@ -74,10 +74,10 @@ content-type: application/json
 
 # Delete _id contact
 ###
-DELETE  https://cse341-lesson3.onrender.com/contacts/632d43e5288e216a0f36b3e3 HTTP/1.1
+DELETE  https://cse341-contactsapi-swagger.onrender.com/contacts/632d43e5288e216a0f36b3e3 HTTP/1.1
 
 ### 
-PUT https://cse341-lesson3.onrender.com/contacts/632d43e5288e216a0f36b3e3 HTTP/1.1
+PUT https://cse341-contactsapi-swagger.onrender.com/contacts/632d43e5288e216a0f36b3e3 HTTP/1.1
 content-type: application/json
 
 {
