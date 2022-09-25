@@ -1,0 +1,38 @@
+{
+  "name": "cse341-04-swagger",
+  "version": "1.0.0",
+  "description": "rest client get requests node architecture",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js",
+    "start": "node app.js",
+    "swagger-autogen": "node ./swagger.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwazeme/cse341-04-swagger.git"
+  },
+  "keywords": [
+    "REST Clients",
+    "GET Requests",
+    "Node Architecture"
+  ],
+  "author": "Kwazeme ogubie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kwazeme/cse341-04-swagger/issues"
+  },
+  "homepage": "https://github.com/kwazeme/cse341-04-swagger#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "mongodb": "^4.9.1",
+    "swagger-jsdoc": "^6.2.5",
+    "swagger-ui-express": "^4.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "swagger-autogen": "^2.22.0"
+  }
+}
