@@ -25,7 +25,7 @@ app.use(bodyParser.json())
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-with, Content-Type, Accept, Z-Key');
   res.setHeader('Content-Type', 'application/json');
-  res.setHeader('Access-Control-Allow-Origin', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   next();
 })
   .use(bodyParser.urlencoded({ extended: true }))
