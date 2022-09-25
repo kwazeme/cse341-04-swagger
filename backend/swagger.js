@@ -9,9 +9,9 @@ const doc = {
     },
     host: "cse341-contactsapi-swagger.onrender.com",
     basePath: "/",
-    schemes: ['http', 'https']
-    // consumes: ['application/json'],
-    // produces: ['application/json']
+    schemes: ['http', 'https'],
+    consumes: ['application/json'],
+    produces: ['application/json']
 };
 //     tags: [
 //         {
