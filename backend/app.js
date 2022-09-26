@@ -33,7 +33,13 @@ app.use(bodyParser.json())
   .use('/contacts', contactRoutes)
 
   // .use('/api-docs', docRoutes)
-  .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+  // .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+  .use('/api-docs', function(req, res, next){
+    swaggerDocument.host = req.get('host');
+    req.swaggerDoc = swaggerDocument;
+    next();
+}, swaggerUi.serve, swaggerUi.setup());
 
 
 mongoDB.initDb((err, mongoDB) => {
