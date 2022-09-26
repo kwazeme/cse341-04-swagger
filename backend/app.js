@@ -28,7 +28,7 @@ app.use(bodyParser.json())
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   next();
 })
-  .use(bodyParser.urlencoded({ extended: true }))
+  // .use(bodyParser.urlencoded({ extended: true }))
   .use('/professional', professionalRoutes)  
   .use('/contacts', contactRoutes)
 
