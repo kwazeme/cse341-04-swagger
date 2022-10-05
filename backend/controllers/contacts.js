@@ -2,7 +2,7 @@
 
 const { response } = require('express');
 const mongodb = require('../db/mongodb');
-const { options } = require('../routes/contacts');
+// const { options } = require('../routes/contacts');
 const ObjectId = require('mongodb').ObjectId;
 
 // Get All contacts in contacts collection

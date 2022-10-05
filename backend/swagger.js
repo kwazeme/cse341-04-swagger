@@ -7,9 +7,9 @@ const doc = {
     },
     host: 'localhost:8080',
     basePath: '/',
-    schemes: ['http', 'https'],
-    consumes: ['application/json'],
-    produces: ['application/json'],
+    schemes: ['https'],
+    // consumes: ['application/json'],
+    // produces: ['application/json'],
 };
 //     tags: [
 //         {
@@ -59,6 +59,11 @@ const doc = {
 const outputFile = './swagger.json'
 const endpointsFiles = ['./routes/index.js']
 
-await swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
-    require('./routes/index.js')           // Your project's root file
-})
+// swaggerAutogen(outputFile, endpointsFiles, doc)
+// .then(() => {
+    // require('./routes/index.js')           // Your project's root file
+// })
+
+swaggerAutogen(outputFile, endpointsFiles, doc).then(async () => {
+  await import('./routes/index.js');
+});

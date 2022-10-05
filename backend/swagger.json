@@ -8,14 +8,7 @@
   "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
-  ],
-  "consumes": [
-    "application/json"
-  ],
-  "produces": [
-    "application/json"
   ],
   "paths": {
     "/contacts/": {
@@ -166,7 +159,7 @@
         }
       }
     },
-    "/api-docs/": {
+    "/api-docs": {
       "get": {
         "description": "",
         "parameters": [],

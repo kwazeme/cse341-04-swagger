@@ -3,22 +3,24 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoDB = require('./db/mongodb');
+const cors = require('cors');
 
 // const swaggerAutogen = require('swagger-autogen')();
 const port = process.env.PORT || 8080;
 
-const professionalRoutes = require('./routes/professional');
-const contactRoutes = require('./routes/contacts');
-const docRoutes = require('./routes/swagger');
+// const professionalRoutes = require('./routes/professional');
+// const contactRoutes = require('./routes/contacts');
+// const docRoutes = require('./routes/swagger');
 const app = express();
 
 // Add swagger app.js
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger.json');
+// const swaggerUi = require('swagger-ui-express');
+// const swaggerDocument = require('./swagger.json');
 
+// app.options('*', cors());
 
-
-app.use(bodyParser.json())
+app.use(cors())
+  .use(bodyParser.json())
   .use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader(
@@ -29,20 +31,21 @@ app.use(bodyParser.json())
   next();
 })
   // .use(bodyParser.urlencoded({ extended: true }))
-  .use('/professional', professionalRoutes)  
-  .use('/contacts', contactRoutes)
+  // .use('/professional', professionalRoutes)  
+  // .use('/contacts', contactRoutes)
+      .use('/', require('./routes'));
 
   // .use('/api-docs', docRoutes)
   // .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-  .use('/api-docs', function(req, res, next){
-    swaggerDocument.host = req.get('host');
-    req.swaggerDoc = swaggerDocument;
-    next();
-}, swaggerUi.serve, swaggerUi.setup());
+//   .use('/api-docs', function(req, res, next){
+//     swaggerDocument.host = req.get('host');
+//     req.swaggerDoc = swaggerDocument;
+//     next();
+// }, swaggerUi.serve, swaggerUi.setup());
 
 
-mongoDB.initDb((err, mongoDB) => {
+mongoDB.initDb((err) => {
   if (err) {
     console.log(err);
   } else {
